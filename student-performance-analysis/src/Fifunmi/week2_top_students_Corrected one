@@ -1,0 +1,24 @@
+import pandas as pd
+
+def get_top_performers(df, subject, n=5):
+    """
+    Finds the top-performing students in a specified subject.
+    
+    Parameters:
+    - df: The student performance DataFrame.
+    - subject: The name of the subject (column).
+    - n: The number of top scores to return.
+    """
+    # 1. Convert column data into a list
+    scores_list = df[subject].tolist()
+    
+    # 2. Sorting the list descending to get highest scores first
+    scores_list.sort(reverse=True)
+    
+    # 3. Get the top n values
+    top_scores = scores_list[:n]
+    
+    # Return the rows corresponding to those top scores
+    top_students = df.sort_values(by=subject, ascending=False).head(n)
+    
+    return top_students
