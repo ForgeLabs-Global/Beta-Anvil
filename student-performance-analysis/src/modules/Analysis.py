@@ -1,5 +1,5 @@
 # Loading cleaned data
-df.to_csv("cleaned_data.csv", index=False)
+df = pd.read_csv("cleaned_data.csv")
 
 ## Core Task
 # Average math score
@@ -16,4 +16,5 @@ print("Average Reading Score;", avg_reading_score)
 avg_writing_score = df["writing score"].mean()
 # Print average math scores
 print("Average Writing Score;", avg_writing_score)
+
 
